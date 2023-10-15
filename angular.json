@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "DSOMM": {
+    "maturity-model": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dsomm",
+            "outputPath": "dist/maturity-model",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "DSOMM:build:production"
+              "browserTarget": "maturity-model:build:production"
             },
             "development": {
-              "browserTarget": "DSOMM:build:development"
+              "browserTarget": "maturity-model:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "DSOMM:build"
+            "browserTarget": "maturity-model:build"
           }
         },
         "test": {
@@ -114,7 +114,7 @@
       }
     }
   },
-  "defaultProject": "DSOMM",
+  "defaultProject": "maturity-model",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }
