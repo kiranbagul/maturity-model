@@ -4,11 +4,12 @@
 
 This is simplified version of The OWASP DevSecOps Maturity Model implementation (https://github.com/devsecopsmaturitymodel/DevSecOps-MaturityModel). 
 
-Goal is : 
+Goals : 
 - Collection of ready to use process templates for mulptiple streams.
-- Generic and simplified yaml structure
+- Generic and simplified yaml structure suitable for any problem domain
 - UX improvements
 
+Demo : https://www.kiranbagul.com/maturity-model-demo/ (WIP)
 
 # Maturity Model Chart
 
