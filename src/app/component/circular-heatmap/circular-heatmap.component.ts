@@ -492,7 +492,7 @@ export class CircularHeatmapComponent implements OnInit {
     var radialLabels = [];
     var segmentLabels: any[] = [];
 
-    //console.log(segmentLabels)
+
 
     function chart(selection: any) {
       selection.each(function (this: any, data: any) {
@@ -583,15 +583,21 @@ export class CircularHeatmapComponent implements OnInit {
           .append('path')
           .attr('id', 'segment-label-path-' + id)
           .attr('d', 'm0 -' + r + ' a' + r + ' ' + r + ' 0 1 1 -1 0');
+          console.log(segmentLabels)
+
+        var labelTexts = segmentLabels.map(l=> l.length > 11 ? l.substring(0,11)+"..." : l);
 
         labels
           .selectAll('text')
-          .data(segmentLabels)
+          .data(labelTexts)
           .enter()
           .append('text')
           .append('textPath')
           .attr('xlink:href', '#segment-label-path-' + id)
-          .style('font-size', '12px')
+          .style('font-size', '10px')
+          .style('white-space', 'nowrap')
+          .style('overflow', 'hidden')
+          .style('text-overflow', 'ellipsis')
           .attr('startOffset', function (d, i) {
             return (i * 100) / numSegments + 0.1 + '%';
           })
