@@ -1,0 +1,84 @@
+---
+Test Pyramid:
+  Build1:
+    B11:
+      level: 1
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+    B1111:
+      level: 1
+      tags:
+      - none
+      teamsImplemented:
+        Default: false    
+    B12:
+      level: 2
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+    B13:
+      level: 3
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+  Build2:
+    B21:
+      level: 1
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+    B22:
+      level: 2
+      tags:
+      - none
+      teamsImplemented:
+        Default: true
+    B23:
+      level: 3
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+  Build3:
+    B13:
+      level: 1
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+    B32:
+      level: 2
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+    B33:
+      level: 3
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+  Build4:
+    B43:
+      level: 1
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+    B42:
+      level: 2
+      tags:
+      - none
+      teamsImplemented:
+        Default: false
+    B43:
+      level: 3
+      tags:
+      - none
+      teamsImplemented:
+        Default: false

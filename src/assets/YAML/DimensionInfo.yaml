@@ -1,0 +1,68 @@
+---
+Unit tests - FE:
+  desc : "Tests that assess the isolated behavior of individual code components (e.g., functions, methods, classes, controllers, repository, domain etc..) to verify correctness & reliability, emphasizing input validation, boundary conditions, and functional accuracy"
+Unit tests - BFF:
+  desc : "Tests that assess the isolated behavior of individual code components (e.g., functions, methods, classes, controllers, repository, domain etc..) to verify correctness & reliability, emphasizing input validation, boundary conditions, and functional accuracy"
+Component test:
+  desc : "A component test is a test that limits the scope of the exercised software to a portion of the system under test. Tests the individual components  independently without integrating with other components. External dependencies and other components are stubbed. Uses test doubles of those services, either in process or remote"
+Contract tests:
+  desc : "Tests that verify that individual services adhere to predefined contracts or agreements that specify how they should communicate and exchange data. It captures the interactions that are exchanged between each service, storing them in a contract, which then can be used to verify that both parties adhere to it."
+API Integration Tests:
+  desc : "Tests that verify that multiple  services can work together cohesively when integrated into the complete system. Require live versions of all services"
+UI Functional tests:
+  desc : "Functional tests test that the user interface of your application works correctly. User input should trigger the right actions, data should be presented to the user, the UI state should change as expected. User-journey tests are designed to simulate a typical user's journey through the system. Such a test will typically cover a user's entire interaction with the system in order to achieve some goal."
+Pyramid balance:
+  desc : "Pyramid Balanced refers to the ideal distribution of different types of tests (e.g., unit, component,integration, UI) to ensure a balanced and efficient testing strategy, where a majority of tests are lower-level (e.g., unit component,api) and fewer are higher-level (e.g., UI tests) to optimize testing effectiveness and speed."
+
+CI Build Pipeline for unit, component and contract tests:
+  desc : "A build pipeline that provides developer feedback before generating deployable artifacts upon code check-ins."
+CI jobs for API and Functional test automation pipeline:
+  desc : "A build pipeline that provides developer feedback before generating deployable artifacts upon code check-ins."
+
+Reporting:
+  desc : "A static HTML report that gets  generated for every test run, capturing results, screen captures, videos, or other data to aid in the identification and resolution of failed tests."
+Dashboard:
+  desc : "A test reporting dashboard that provides visual representations of test automation data and metrics, offering a consolidated view of test results, test coverage, and other relevant testing information. It allows testing teams and stakeholders to monitor and analyze the progress and quality of a software test automation, aiding in decision-making and issue identification."
+Test Analytics in the Dashboard:
+  desc : "The Test Analytics that provides meaningful insights, intelligence and quick turn around time to fix test failures. The ability to measure a test suite's state based on analysing both its current and historical data, including reports, logs, metrics, and traces."
+
+Clean code:
+  desc : "Code  that is easy to read, understand, and maintain. Clean code follows established coding conventions, principles, and best practices, making it more efficient and less error-prone."
+Design Principles:
+  desc : "Leveraging design principles and the language specific capabilities to enhance the effectiveness of code"
+
+Framework capabalities:
+  desc : "Set of features, functions, and tools provided by a test automation framework to support and enhance the process of automated testing. These capabilities enable testers and developers to create, manage, execute, and analyze automated test scripts efficiently and effectively."
+Test Data Management:
+  desc : "The ability to of create, organize, manage, and cleanup the data used in automated testing."
+Automated Test cases:
+  desc : "process of creating and designing test cases that are aligned with the overall test framework and are essential for validating the functionality and performance of automated tests."
+Local setup:
+  desc : "Documention or a README file which has set by step instructions to setup an automation framework in local system"
+
+Test Environment:
+  desc : "Availability of environment where the automated tests are created and executed"
+3rd party Browser and Device cloud:
+  desc : "Utilization of external services or platforms that offer diverse web browsers and mobile devices for testing and test automation"
+
+Test Backlog strategy:
+  desc : "The approach and planning for managing the backlog of test cases and test activities, ensuring efficient prioritization, allocation of resources, and execution to improve overall testing effectiveness and automation efficiency"
+Tool selection:
+  desc : "Selecting the appropriate automation tools and technologies to align with the overall strategic objectives and operational processes of an organization."
+In-Sprint test automation:
+  desc : "Incorporating automated testing activities within the sprint or development cycle to ensure early and continuous validation of software quality"
+Version-Control:
+  desc : "Management and tracking of changes of code or automation scripts, ensuring collaboration, version history, and traceability, which is crucial for maintaining the quality and reliability of automated processes."
+Failure Analysis and Test script maintainance:
+  desc : "systematic process of analyzing and understanding the reasons behind test failures, enabling organizations to improve their testing strategies."
+Testing Roadmap:
+  desc : "Establishing an automation testing roadmap, outlining key milestones and objectives, ensuring a structured and goal-driven approach"
+
+Performance Test - Web:
+  desc : "Aassess the efficiency and responsiveness of web applications under varying loads and how rapidly any site loads on a web browser and demonstrate the quality of the application's interactivity, reliability, and usability"
+Performance Test - API:
+  desc : "Assess the capability of automated processes to evaluate the speed, responsiveness,load,stress and efficiency of API interactions"
+Visual regression:
+  desc : "Visual changes or discrepancies in a software application's user interface (UI) during the automation testing process. It measures the system's capability to maintain consistent and error-free visual appearance between different versions or builds of the software."
+Browser and Device compatibility testing - Functional Testing:
+  desc : "Assessing how well are the  automation tests ensure that your web application functions correctly across various browsers and devices, checking for compatibility issues and functional correctness."
