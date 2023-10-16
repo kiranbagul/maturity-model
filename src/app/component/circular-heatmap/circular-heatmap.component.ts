@@ -92,9 +92,7 @@ export class CircularHeatmapComponent implements OnInit {
     this.yaml.setURI('./assets/YAML/generated/generated.yaml');
     // Function sets data
     this.yaml.getJson().subscribe(data => {
-      console.log(this.radial_labels)
       this.YamlObject = data;
-      console.log(this.YamlObject);
 
       var allDimensionNames = Object.keys(this.YamlObject);
       // console.log(allDimensionNames);
@@ -313,6 +311,8 @@ export class CircularHeatmapComponent implements OnInit {
     segment_labels: string[]
   ) {
 
+    var noOfradialSegmentsRequired  = radial_labels.length; // dirty fix to remove level 0. 
+
     var showTooltip = function(evt, text) {
       let tooltip = document.getElementById("tooltip");
       tooltip.innerHTML = text;
@@ -343,7 +343,7 @@ export class CircularHeatmapComponent implements OnInit {
 
     var segmentHeight =
       (width - margin.top - margin.bottom - 2 * innerRadius) /
-      (2 * radial_labels.length);
+      (2 * noOfradialSegmentsRequired);
 
     var chart = this.circularHeatChart(segment_labels.length)
       .innerRadius(innerRadius)
@@ -357,10 +357,13 @@ export class CircularHeatmapComponent implements OnInit {
       return d['Done%'];
     });
     //d3.select("svg").remove();
+    console.log(dataset, dataset)
+    var data = dataset.filter(d => d.Level !== "Level 0");
+    //data = dataset;
     var svg = d3
       .select(dom_element_to_append_to)
       .selectAll('svg')
-      .data([dataset])
+      .data([data])
       .enter()
       .append('svg')
       .attr('width', height) // 70% forces the heatmap down
@@ -369,7 +372,7 @@ export class CircularHeatmapComponent implements OnInit {
       .attr(
         'transform',
         'translate(' +
-          (width / 2 - (radial_labels.length * segmentHeight + innerRadius)) +
+          (width / 2 - (noOfradialSegmentsRequired * segmentHeight + innerRadius)) +
           ',' +
           margin.top +
           ')'
@@ -583,9 +586,8 @@ export class CircularHeatmapComponent implements OnInit {
           .append('path')
           .attr('id', 'segment-label-path-' + id)
           .attr('d', 'm0 -' + r + ' a' + r + ' ' + r + ' 0 1 1 -1 0');
-          console.log(segmentLabels)
 
-        var labelTexts = segmentLabels.map(l=> l.length > 11 ? l.substring(0,11)+"..." : l);
+        var labelTexts = segmentLabels.map(l=> l.length > 16 ? l.substring(0,16)+"..." : l);
 
         labels
           .selectAll('text')

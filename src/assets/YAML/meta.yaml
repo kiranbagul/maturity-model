@@ -33,7 +33,6 @@ strings:
     hardness: ['Very soft', 'Soft', 'Medium', 'High', 'Very high']
     maturity_levels:
       [
-        'Level 0: Not present',
         'Level 1: Adoption of basic practices',
         'Level 2: High adoption of practices',
         'Level 3: Very high adoption of best practices',

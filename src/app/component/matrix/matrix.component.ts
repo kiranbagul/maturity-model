@@ -105,7 +105,6 @@ export class MatrixComponent implements OnInit {
               subdimensionsInCurrentDimension[j]
             ]
           );
-            console.log("11" + activityInCurrentSubDimension);
           for (let a = 0; a < activityInCurrentSubDimension.length; a++) {
             var currentActivityName = activityInCurrentSubDimension[a];
             var tagsInCurrentActivity: string[] =
