@@ -31,6 +31,7 @@ export interface cardSchema {
   templateUrl: './circular-heatmap.component.html',
   styleUrls: ['./circular-heatmap.component.css'],
 })
+
 export class CircularHeatmapComponent implements OnInit {
   Routing: string = '/activity-description';
   maxLevelOfActivities: number = -1;
@@ -51,6 +52,15 @@ export class CircularHeatmapComponent implements OnInit {
   activityDetails: any;
   showOverlay: boolean;
   descMap = {};
+  projectOptions = {};
+  selectedProject: string;
+  projectNames: [];
+
+  changeProject(e) {
+    localStorage.setItem('selectedProject', e.value);
+    localStorage.setItem('selectedProjectConfig', this.projectOptions[e.value])
+    location.reload();
+  }
 
   constructor(
     private yaml: ymlService,
@@ -61,10 +71,12 @@ export class CircularHeatmapComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.yaml.setURI('./assets/YAML/meta.yaml');
+    this.yaml.setURI('./assets/config/meta.yaml');
     // Function sets column header
     this.yaml.getJson().subscribe(data => {
       this.YamlObject = data;
+      this.projectNames = this.YamlObject['projects'].map(p => p.name);
+      this.YamlObject['projects'].forEach(p => this.projectOptions[p.name]= p.config);
 
       // Levels header
       for (let x in this.YamlObject['strings']['en']['maturity_levels']) {
@@ -72,9 +84,14 @@ export class CircularHeatmapComponent implements OnInit {
         this.radial_labels.push('Level ' + y);
         this.maxLevelOfActivities = y;
       }
+
+      this.loadProject();
+
     });
+
+
     // Team Data
-    this.yaml.setURI('./assets/YAML/meta.yaml');
+    this.yaml.setURI('./assets/config/meta.yaml');
     this.yaml.getJson().subscribe(data => {
       this.YamlObject = data;
 
@@ -83,13 +100,18 @@ export class CircularHeatmapComponent implements OnInit {
       this.teamVisible = [...this.teamList];
     });
 
-    this.yaml.setURI('./assets/YAML/DimensionInfo.yaml');
+    this.yaml.setURI('./assets/config/DimensionInfo.yaml');
     this.yaml.getJson().subscribe(data => {
       this.YamlObject = data;
       Object.keys(data).forEach(d => this.descMap[d] = data[d].desc);
     });
+  }
 
-    this.yaml.setURI('./assets/YAML/generated/generated.yaml');
+  loadProject = function() {
+    var project = localStorage.getItem('selectedProject');
+    this.selectedProject = project != null ? project :  "Mobile Sportsbook"
+    
+    this.yaml.setURI('./assets/config/'+this.projectOptions[this.selectedProject]);
     // Function sets data
     this.yaml.getJson().subscribe(data => {
       this.YamlObject = data;

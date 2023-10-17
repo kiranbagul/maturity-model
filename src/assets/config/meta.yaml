@@ -40,3 +40,6 @@ strings:
       ]
 # Default team
 teams: ['Default']
+projects: [{name: 'Mobile Sportsbook', config: "mobile-sportsbook.yaml"},
+          {name: 'Portal : Platform', config: "devops.yaml"},
+          {name: 'Trading', config: "template.yaml"}]

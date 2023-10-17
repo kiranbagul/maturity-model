@@ -59,3 +59,10 @@ button {
   border-radius: 16px;
   font: 500 14px / 20px Roboto, 'Helvetica Neue', sans-serif;
 }
+
+#projectName_Mat{
+  display: inline;
+  font: 400 34px / 40px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 10px 10px 0 14px;
+}

@@ -7,28 +7,28 @@ import { Component } from '@angular/core';
 })
 export class SidenavButtonsComponent {
   Options: string[] = [
-    'Matrix',
     'Implementation Levels',
+    'Matrix',
     'Mappings',
-    'Usage',
-    'Teams',
-    'About Us',
+    // 'Usage',
+    // 'Teams',
+    // 'About Us',
   ];
   Icons: string[] = [
-    'table_chart',
     'pie_chart',
+    'table_chart',
     'timeline',
-    'description',
-    'people',
-    'info',
+    // 'description',
+    // 'people',
+    // 'info',
   ];
   Routing: string[] = [
     '/',
-    '/circular-heatmap',
+    '/metrix',
     '/mapping',
-    '/usage',
-    '/teams',
-    '/about',
+    // '/usage',
+    // '/teams',
+    // '/about',
   ];
   constructor() {}
 }

@@ -195,6 +195,17 @@
       </div>
       <div id="chart" class="heatmapClass">
         <div class="right-panel">
+          <div id="projectName"><h1>{{selectedProject}}</h1></div>
+          <mat-form-field>
+            <mat-label>Select project</mat-label>
+            <mat-select id="project" (selectionChange)="changeProject($event)">
+              <mat-option *ngFor="let opt of projectNames" [value]="opt">{{opt}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- </mat-select>
+          <mat-select name="project" (change)="changeProject($event)">
+            <option *ngFor="let opt of projectOptions" [value]="opt">{{opt}}</option>
+          </mat-select> -->
           <div class="team-filter">
             <mat-form-field class="team-chip-list">
               <mat-label>Team Group Filter</mat-label>

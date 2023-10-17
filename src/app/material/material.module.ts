@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CommonModule } from '@angular/common';
+import {MatSelectModule} from '@angular/material/select';
 
 const MaterialComponents = [
   CommonModule,
@@ -29,6 +30,7 @@ const MaterialComponents = [
   MatCardModule,
   MatCheckboxModule,
   MatButtonToggleModule,
+  MatSelectModule
 ];
 
 @NgModule({

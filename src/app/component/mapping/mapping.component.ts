@@ -133,15 +133,20 @@ export class MappingComponent implements OnInit {
 
   ngOnInit(): void {
     //gets value from meta folder
-    this.yaml.setURI('./assets/YAML/meta.yaml');
+    this.yaml.setURI('./assets/config/meta.yaml');
     // Function sets label data
     this.yaml.getJson().subscribe(data => {
       //console.log(data)
       this.knowledgeLabels = data['strings']['en']['KnowledgeLabels'];
       this.generalLabels = data['strings']['en']['labels'];
     });
-    //gets value from generated folder
-    this.yaml.setURI('./assets/YAML/generated/generated.yaml');
+
+    //gets value from config folder
+    var project = localStorage.getItem('selectedProject');
+    var projectConfig = localStorage.getItem('selectedProjectConfig');
+    var selectedProject = project != null ? project :  "Mobile Sportsbook"
+    this.yaml.setURI('./assets/config/'+projectConfig);
+
     // Function sets data
     this.yaml.getJson().subscribe(data => {
       this.YamlObject = data;

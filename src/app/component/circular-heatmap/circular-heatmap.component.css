@@ -75,10 +75,11 @@
   margin: 0;
   padding: 0 1em;
 }
-/* .team-filter {
-  padding: 0;
-  width: 60%;
-} */
+.team-filter {
+  /* padding: 0;
+  width: 60%; */
+  display: none;
+}
 .team-filter > .mat-form-field {
   display: block;
 }
@@ -98,4 +99,14 @@
 
 .mat-card-title{
   line-height: 30px;
+}
+
+.mat-form-field{
+  width: 300px;
+}
+
+#projectName{
+  width: 300px;
+  text-align: end;
+  font-weight: bold;
 }

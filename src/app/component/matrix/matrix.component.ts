@@ -36,7 +36,8 @@ export class MatrixComponent implements OnInit {
   dataSource: any = new MatTableDataSource<MatrixElement>(this.MATRIX_DATA);
   subDimensionVisible: string[] = [];
   activityVisible: string[] = [];
-  allDimensionNames: string[] = [];
+  allDimensionNames: string[] = [];s
+  selectedProject: string;
 
   constructor(private yaml: ymlService, private router: Router) {
     this.filteredSubDimension = this.rowCtrl.valueChanges.pipe(
@@ -60,7 +61,7 @@ export class MatrixComponent implements OnInit {
   // function to initialize if level columns exists
 
   ngOnInit(): void {
-    this.yaml.setURI('./assets/YAML/meta.yaml');
+    this.yaml.setURI('./assets/config/meta.yaml');
     // Function sets column header
     this.yaml.getJson().subscribe(data => {
       this.YamlObject = data;
@@ -76,7 +77,10 @@ export class MatrixComponent implements OnInit {
     var activitySet = new Set();
 
     //gets value from generated folder
-    this.yaml.setURI('./assets/YAML/generated/generated.yaml');
+    var project = localStorage.getItem('selectedProject');
+    var projectConfig = localStorage.getItem('selectedProjectConfig');
+    this.selectedProject = project != null ? project :  "Mobile Sportsbook"
+    this.yaml.setURI('./assets/config/'+projectConfig);
     // Function sets data
     this.yaml.getJson().subscribe(data => {
       this.YamlObject = data;
